@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import Loppan from "./components/Loppan";
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <Loppan />
     </div>
-  )
-}
+  );
+};
