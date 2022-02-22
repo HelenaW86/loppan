@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Message from "./Message";
 
@@ -33,6 +33,7 @@ const ColorPalett = ({ tasks, isEven }) => {
   const handleColor = (e) => {
     setShowMessage(true);
     setMessage(e.target.value);
+    console.log(e.target.link);
   };
   return (
     <>

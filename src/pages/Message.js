@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Flower from "components/Flower";
+
+import { useNavigate } from "react-router-dom";
+
 const Div = styled.div`
   margin: 40px auto;
   width: 300px;
@@ -18,14 +21,26 @@ const H = styled.h1`
   font-weight: 400;
 `;
 
+const Button = styled.button`
+  border: none;
+  /* background-color: #4665c2; */
+  color: #4665c2;
+  font-size: 20px;
+  border: 2px solid #4665c2;
+  border-radius: 10px;
+  background-color: #f593c9;
+`;
+
 const Message = ({ messages }) => {
-  //   const [start, setStart] = useState(false);
+  const navigate = useNavigate();
+
   return (
     <>
       <Div>
         <H>{messages}</H>
         <Flower />
       </Div>
+      <Button onClick={() => window.location.reload(true)}>Gör om...</Button>
     </>
   );
 };

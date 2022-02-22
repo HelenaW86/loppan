@@ -1,6 +1,6 @@
-import React, { useState, createContext } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import styled from "styled-components";
+
 import Loader from "components/Loader";
 import ColorPalett from "../pages/ColorPalett";
 
@@ -45,35 +45,29 @@ const FilteringButton = styled.button`
 `;
 
 const Loppan = () => {
-  // const Context = createContext("Default Value");
-
-  // const value = "My Context Value";
-  // return (
-  //   <Context.Provider value={value}>
-  //     <ColorPalett />
-  //   </Context.Provider>
-  // );
-
   const tasks = [
     {
       color: "Teal",
-      sentense: "Måla den vackraste tavlan du någonsin gjort 🖌️",
+      sentense: "Bygg ett pappersflygplan ✈️",
       even: false,
+      link: "https://gloop.se/pappersflygplan",
     },
     {
       color: "Tomato",
-      sentense: "Måla den vackraste tavlan du någonsin gjort 🖌️",
+      sentense: "Lek kurragömma 💜",
       even: true,
     },
     {
       color: "red",
       sentense: "Måla den vackraste tavlan du någonsin gjort 🖌️",
       even: false,
+      link: "https://www.pinterest.se/Eiwz/saker-att-m%C3%A5la-av/",
     },
     {
       color: "green",
       sentense: "Sätt på din favorit låt och dansa som att ingen ser 💃",
       even: true,
+      link: "https://open.spotify.com/",
     },
     {
       color: "purple",
@@ -84,21 +78,25 @@ const Loppan = () => {
       color: "HotPink",
       sentense: "Baka chokladmuffins 👩‍🍳",
       even: true,
+      link: "https://www.recepten.se/recept/kladdmuffins.html",
     },
     {
       color: "yellow",
-      sentense: "Skapa med play doh",
+      sentense: "Skapa med play doh 🍩",
       even: false,
+      link: "https://larlek.se/enkelt-play-doh-recept/",
     },
     {
       color: "RoyalBlue",
       sentense: "Spela en låt på synten 🎹",
       even: true,
+      link: "https://www.spelapiano.org/latar.html",
     },
     {
       color: "orange",
       sentense: "Ha ett hemma spa med egengjord ansiktsmask 💆‍♀️ ",
       even: false,
+      link: "https://skonhetsplaneten.se/gora-egen-ansiktsmask/",
     },
     {
       color: "Chartreuse",
@@ -114,6 +112,7 @@ const Loppan = () => {
       color: "DarkViolet",
       sentense: "Gå ut och leta efter insekter i trädgården 🐛",
       even: true,
+      link: "https://www.artdatabanken.se/hjalpa-till/artbestamning-facebook/",
     },
   ];
   const [isEven, setIsEven] = useState();
