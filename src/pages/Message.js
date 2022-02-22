@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import Flower from "components/Flower";
 
-import { useNavigate } from "react-router-dom";
-
 const Div = styled.div`
   margin: 40px auto;
   width: 300px;
@@ -32,8 +30,6 @@ const Button = styled.button`
 `;
 
 const Message = ({ messages }) => {
-  const navigate = useNavigate();
-
   return (
     <>
       <Div>
