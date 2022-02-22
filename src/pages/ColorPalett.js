@@ -6,7 +6,7 @@ const P = styled.p`
   text-align: center;
   color: white;
   font-size: 25px;
-  margin: 40px;
+  margin: 20px;
 `;
 
 const ColorsContainer = styled.div`
@@ -40,17 +40,17 @@ const ColorPalett = ({ tasks, isEven }) => {
         <Message messages={message} />
       ) : (
         <ColorsContainer>
-          <P>Välj en färg</P>
-          {display.map((color) => (
-            <ColorPicker
-              key={color.color}
-              value={color.sentense}
-              style={{ backgroundColor: `${color.color}` }}
-              onClick={handleColor}
-            >
-              {color.color}
-            </ColorPicker>
-          ))}
+          <>
+            <P>Välj en färg</P>
+            {display.map((color) => (
+              <ColorPicker
+                key={color.color}
+                value={color.sentense}
+                style={{ backgroundColor: `${color.color}` }}
+                onClick={handleColor}
+              />
+            ))}
+          </>
         </ColorsContainer>
       )}
     </>

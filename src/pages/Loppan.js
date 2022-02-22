@@ -13,9 +13,10 @@ const Main = styled.main`
   align-items: center;
 `;
 const Heading = styled.h1`
-  color: blue;
+  color: #4665c2;
   font-family: "Fredoka One", cursive;
   font-size: 50px;
+  margin: 40px auto 10px;
 `;
 const P = styled.p`
   font-size: 23px;
