@@ -28,12 +28,22 @@ const Button = styled.button`
   border-radius: 10px;
   background-color: #f593c9;
 `;
+const A = styled.a`
+  text-decoration: none;
+  color: white;
+  font-family: "Balsamiq Sans", cursive;
+  font-size: 15px;
+  &:hover {
+    color: pink;
+  }
+`;
 
-const Message = ({ messages }) => {
+const Message = ({ messages, linken }) => {
   return (
     <>
       <Div>
         <H>{messages}</H>
+        {linken && <A href={linken}>Få inspiration</A>}
         <Flower />
       </Div>
       <Button onClick={() => window.location.reload(true)}>Gör om...</Button>

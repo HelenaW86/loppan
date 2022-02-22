@@ -29,16 +29,19 @@ const ColorPicker = styled.button`
 const ColorPalett = ({ tasks, isEven }) => {
   const [showMessage, setShowMessage] = useState(false);
   const [message, setMessage] = useState("");
+  const [linken, setLinken] = useState("");
   const display = tasks.filter((task) => task.even === isEven);
-  const handleColor = (e) => {
+
+  const handleLinken = (c) => {
+    setLinken(c.link);
+    setMessage(c.sentense);
     setShowMessage(true);
-    setMessage(e.target.value);
-    console.log(e.target.link);
   };
+
   return (
     <>
       {showMessage ? (
-        <Message messages={message} />
+        <Message messages={message} linken={linken} />
       ) : (
         <ColorsContainer>
           <>
@@ -46,9 +49,8 @@ const ColorPalett = ({ tasks, isEven }) => {
             {display.map((color) => (
               <ColorPicker
                 key={color.color}
-                value={color.sentense}
                 style={{ backgroundColor: `${color.color}` }}
-                onClick={handleColor}
+                onClick={() => handleLinken(color)}
               />
             ))}
           </>
