@@ -29,6 +29,7 @@ const ButtonContainer = styled.section`
 `;
 const FilteringButton = styled.button`
   margin: 10px;
+  cursor: pointer;
   width: 70px;
   height: 70px;
   border-radius: 10%;
@@ -119,9 +120,11 @@ const Loppan = () => {
   const [numberClicked, setNumberClicked] = useState(false);
   const [loading, setLoading] = useState(false);
   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const [counter, setCounter] = useState();
 
-  const handleNum = (e) => {
+  const handleNum = e => {
     setLoading(true);
+    setCounter(e.target.value);
 
     if (e.target.value % 2 === 0) {
       setIsEven(true);
@@ -130,13 +133,13 @@ const Loppan = () => {
     }
     setTimeout(() => {
       setLoading(false);
-    }, e.target.value * 1000);
-    setNumberClicked(true);
+      setNumberClicked(true);
+    }, e.target.value * 1450);
   };
 
   return (
     <Main>
-      {loading && <Loader loading={loading} />}
+      {loading && <Loader loading={loading} counter={counter} />}
       <Heading>Loppan</Heading>
       {numberClicked ? (
         <ColorPalett tasks={tasks} isEven={isEven} />
@@ -144,7 +147,7 @@ const Loppan = () => {
         <>
           <P>Räkna till...</P>
           <ButtonContainer>
-            {numbers.map((num) => (
+            {numbers.map(num => (
               <FilteringButton key={num} value={num} onClick={handleNum}>
                 {num}
               </FilteringButton>

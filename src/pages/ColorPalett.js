@@ -13,6 +13,7 @@ const ColorsContainer = styled.div`
   width: 320px;
 `;
 const ColorPicker = styled.button`
+  cursor: pointer;
   width: 130px;
   height: 130px;
   margin: 10px;
@@ -30,9 +31,9 @@ const ColorPalett = ({ tasks, isEven }) => {
   const [showMessage, setShowMessage] = useState(false);
   const [message, setMessage] = useState("");
   const [linken, setLinken] = useState("");
-  const display = tasks.filter((task) => task.even === isEven);
+  const display = tasks.filter(task => task.even === isEven);
 
-  const handleLinken = (c) => {
+  const handleLinken = c => {
     setLinken(c.link);
     setMessage(c.sentense);
     setShowMessage(true);
@@ -46,7 +47,7 @@ const ColorPalett = ({ tasks, isEven }) => {
         <ColorsContainer>
           <>
             <P>Välj en färg</P>
-            {display.map((color) => (
+            {display.map(color => (
               <ColorPicker
                 key={color.color}
                 style={{ backgroundColor: `${color.color}` }}

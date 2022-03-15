@@ -20,8 +20,8 @@ const H = styled.h1`
 `;
 
 const Button = styled.button`
+  cursor: pointer;
   border: none;
-  /* background-color: #4665c2; */
   color: #4665c2;
   font-size: 20px;
   border: 2px solid #4665c2;
@@ -32,7 +32,7 @@ const A = styled.a`
   text-decoration: none;
   color: white;
   font-family: "Balsamiq Sans", cursive;
-  font-size: 15px;
+  font-size: 18px;
   &:hover {
     color: pink;
   }
