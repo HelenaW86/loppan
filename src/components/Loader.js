@@ -50,12 +50,14 @@ const LoadingContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 300px;
-  height: 100vh; ;
+  height: 100vh;
 `;
 const Div = styled.div`
+  position: absolute;
+  z-index: 3;
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 100%;
+  background-color: #f593c9;
 `;

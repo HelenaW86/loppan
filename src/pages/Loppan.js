@@ -7,10 +7,12 @@ import ColorPalett from "../pages/ColorPalett";
 const Main = styled.main`
   background-color: #f593c9;
   margin: 0;
+  width: 100vw;
   height: 110vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 const Heading = styled.h1`
   color: #4665c2;
@@ -138,24 +140,26 @@ const Loppan = () => {
   };
 
   return (
-    <Main>
+    <>
       {loading && <Loader loading={loading} counter={counter} />}
-      <Heading>Loppan</Heading>
-      {numberClicked ? (
-        <ColorPalett tasks={tasks} isEven={isEven} />
-      ) : (
-        <>
-          <P>Räkna till...</P>
-          <ButtonContainer>
-            {numbers.map(num => (
-              <FilteringButton key={num} value={num} onClick={handleNum}>
-                {num}
-              </FilteringButton>
-            ))}
-          </ButtonContainer>
-        </>
-      )}
-    </Main>
+      <Main>
+        <Heading>Loppan</Heading>
+        {numberClicked ? (
+          <ColorPalett tasks={tasks} isEven={isEven} />
+        ) : (
+          <>
+            <P>Räkna till...</P>
+            <ButtonContainer>
+              {numbers.map(num => (
+                <FilteringButton key={num} value={num} onClick={handleNum}>
+                  {num}
+                </FilteringButton>
+              ))}
+            </ButtonContainer>
+          </>
+        )}
+      </Main>
+    </>
   );
 };
 
